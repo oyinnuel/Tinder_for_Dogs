@@ -1,0 +1,200 @@
+/* * {
+    box-sizing: border-box;
+} */
+
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 650px;
+    /* remember to add the background property to the body when you load the character main*/
+    /* background: linear-gradient(180deg, #FFFFFF 33.29%, #F7F8FC 100%); */
+    background-repeat: no-repeat;
+    font-family: 'Kanit', sans-serif;
+    color: rgb(81, 81, 126);
+    height: 100vh;
+}
+
+.container {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.header-icon {
+    width: 20px;
+    padding: 5px 10px;
+}
+
+.paw {
+    background: linear-gradient(270deg, #FA695A 0%, #F83375 100%);
+    border-radius: 30px;
+    padding: 0px 20px;
+    width: 13px;
+}
+
+.dog {
+    position: relative;
+    /* confirm if this width would still be neeeded now that the container class above has it */
+    width: 98%;
+    height: 80%;
+    margin: 0 auto;
+    display: block;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.position {
+    position: absolute;
+    left: 5%;
+}
+
+/* remove this after test */
+.name, .bio {
+    background-color: red;
+}
+
+.name {
+    bottom: 50px;
+    /* line-height: 36px; */
+    font-size: 32x;
+    font-weight: 600;
+    color: #F8F8F8;
+}
+
+.bio {
+    bottom: 30px;
+    color: #B7B7B7;
+    font-weight: 400;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px #e9e9ea;
+}
+
+.action-btn {
+    border-radius: 50%;
+    margin: auto 10px;
+}
+
+.cross {
+    width: 20px;
+    padding: 21px 16px 17px 16px;
+}
+
+.cross-btn:hover {
+    background: #FFE7EF;
+}
+
+.heart {
+    width: 25px;
+    padding: 20px 13px 15px 13px;
+}
+
+.heart-btn:hover {
+    background: #DBFFF4;
+}
+
+.badge {
+    position: absolute;
+    display: block;
+    width: 100px;
+    left: 18px;
+    top: 80px;
+    transform: rotate(-35deg);
+}
+
+.styled-page {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: 0 auto;
+    /* box-sizing: border-box; */
+    border: #b9a98d 1px solid;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    background: linear-gradient(180deg, #FFFFFF 33.29%, #F7F8FC 100%);
+}
+
+.styled-image {
+    border-radius: 50%;
+    align-items: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.start-image {
+    width: 350px;
+    /* margin: 0 auto; */
+}
+
+.end-image {
+    background-color: aqua;
+    width: 200px;
+}
+
+.welcome {
+    color: #5d4418;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+.question-text {
+    color: #5d4418;
+    margin: 0px auto;
+    font-size: 18px;
+    width: 80%;
+    font-weight: 600;
+}
+
+.contemplation-text {
+    color: #C68132;
+    font-style: italic;
+    margin: 25px 0px 30px 0px;
+}
+
+.get-started-btn {
+    background-color: #85A6DA;
+    color: white;
+    font-size: 18px;
+    padding: 15px 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    border: #fff 2px solid;
+}
+
+.get-started-btn:hover {
+    color: #85A6DA;
+    background-color: #fff;
+    border: #85A6DA 2px solid;
+}
+
