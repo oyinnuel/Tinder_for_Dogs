@@ -1,11 +1,9 @@
-import render from './index.js'
-
 function header() {
     return `
         <header>
-            <img class="header-icon" src="images/icon-profile.png">
-            <img class="header-icon paw" src="images/paw-icon.svg">
-            <img class="header-icon" src="images/icon-chat.png">
+            <img class="header-icon profile-icon" id="profile-icon" src="images/icon-profile.png">
+            <img class="header-icon paw-icon" id="paw-icon" src="images/paw-icon.svg">
+            <img class="header-icon chat-icon" id="chat-icon" src="images/icon-chat.png">
         </header>
     `
 }
@@ -20,6 +18,21 @@ function startPage() {
             <img class="start-image styled-image" src="images/begining_image.png">
             <p class="question-text"> Do you seek for a perfect friend for your dog? </p> 
             <p class="contemplation-text"> if yes </p>
+            <button class="get-started-btn" id="cta"> Get Started </button>
+        </div>
+    `
+}
+
+function newUswerAccount() {
+    
+    return `
+        ${header()}
+
+        <div class="styled-page">
+            <h2 class="welcome"> Welcome to Tender Tinder! </h2>
+            <p class="question-text"> Kindly enter your user name and password </p> 
+            <img class="start-image styled-image" src="images/begining_image.png">
+            <p class="contemplation-text"> Do you have an existing account? If yes </p>
             <button class="get-started-btn" id="cta"> Get Started </button>
         </div>
     `
@@ -41,14 +54,6 @@ function ctaButtons() {
     `
 }
 
-function mains() {
-    return `
-        ${header()}
-        ${render()}
-        ${ctaButtons()}
-    `
-}
-
 function endPage() {
     return `
         ${header()}
@@ -62,4 +67,4 @@ function endPage() {
     `
 }
 
-export { header, startPage, endPage, mains, ctaButtons }
+export { header, startPage, endPage, ctaButtons, newUswerAccount }
