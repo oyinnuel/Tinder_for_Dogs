@@ -1,14 +1,8 @@
-/* * {
-    box-sizing: border-box;
-} */
-
 html,
 body {
     margin: 0 auto;
     padding: 0;
     max-width: 650px;
-    /* remember to add the background property to the body when you load the character main*/
-    /* background: linear-gradient(180deg, #FFFFFF 33.29%, #F7F8FC 100%); */
     background-repeat: no-repeat;
     font-family: 'Kanit', sans-serif;
     color: rgb(81, 81, 126);
@@ -35,46 +29,46 @@ header {
     padding: 5px 10px;
 }
 
-.paw {
+.paw-icon {
     background: linear-gradient(270deg, #FA695A 0%, #F83375 100%);
     border-radius: 30px;
     padding: 0px 20px;
     width: 13px;
 }
 
+.profile-icon,
+.paw-icon:hover,
+.chat-icon {
+    cursor: pointer;
+}
+
 .dog {
     position: relative;
-    /* confirm if this width would still be neeeded now that the container class above has it */
     width: 98%;
     height: 80%;
     margin: 0 auto;
     display: block;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
 }
 
 .position {
     position: absolute;
-    left: 5%;
-}
-
-/* remove this after test */
-.name, .bio {
-    background-color: red;
+    left: 15px;
 }
 
 .name {
     bottom: 50px;
-    /* line-height: 36px; */
     font-size: 32x;
     font-weight: 600;
     color: #F8F8F8;
+    top: 420px;
 }
 
 .bio {
     bottom: 30px;
     color: #B7B7B7;
     font-weight: 400;
+    top: 460px;
 }
 
 section {
@@ -133,7 +127,6 @@ button {
     align-items: center;
     display: block;
     margin: 0 auto;
-    /* box-sizing: border-box; */
     border: #b9a98d 1px solid;
     border-radius: 10px;
     margin-bottom: 4px;
@@ -150,11 +143,9 @@ button {
 
 .start-image {
     width: 350px;
-    /* margin: 0 auto; */
 }
 
 .end-image {
-    background-color: aqua;
     width: 200px;
 }
 
@@ -198,3 +189,63 @@ button {
     border: #85A6DA 2px solid;
 }
 
+@media(min-width:550px) {
+    .header-icon {
+        width: 30px;
+    }
+
+    .dog {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .position {
+        left: 10%;
+    }
+    
+    .name {
+        top: 820px;
+    }
+        
+    .bio {
+        top: 860px;
+    }
+
+    .cross {
+        width: 35px;
+        padding: 23px 18px 19px 18px;
+    }
+
+    .heart {
+        width: 40px;
+        padding: 22px 15px 17px 15px;
+    }
+
+    .badge {
+        width: 200px;
+        left: 7%;
+        top: 20%;
+    }
+}
+
+@media(min-width:950px) {
+    .position {
+        left: 30%;
+    }
+
+    .badge {
+        left: 29%;
+        top: 21%;
+    }
+}
+
+@media(min-width:1500px) {
+    .position {
+        left: 35%;
+    }
+
+    .badge {
+        left: 35%;
+        top: 15%;
+    }
+}
