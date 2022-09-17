@@ -1,6 +1,3 @@
-// Create the Dog class here
-// import { dogs } from './data.js'
-
 function Character(dogsData) {
     Object.assign(this, dogsData)
 
