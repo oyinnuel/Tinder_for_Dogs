@@ -1,92 +1,106 @@
 import dogsData from './data.js'
 import Character from './Dog.js'
-import {header, startPage, ctaButtons, mains, endPage} from './utility.js'
+import {header, startPage, ctaButtons, newUswerAccount, endPage} from './utility.js'
 
 const main = document.getElementById("main")
-let cross 
-let heart 
-// const cta = document.getElementById("cta")
 
 let currentDogIndex = 0
 let currentDog = new Character(dogsData[currentDogIndex])
 let isWaiting = false
 
 function getIntroPageHtml() {
-    console.log("getIntroPageHtml is working")
     main.innerHTML = startPage()
 }
-getIntroPageHtml() 
+getIntroPageHtml()
 
-document.getElementById("cta").addEventListener("click", getStarted)
+function getHeadersIconsDisplays() {
+    const profileIcon = document.getElementById("profile-icon")
+    const pawIcon = document.getElementById("paw-icon")
+    const chatIcon = document.getElementById("chat-icon")
 
-function getStarted() {
-    
-    console.log("getStarted is working")
-    main.innerHTML = header()
-    render()
-    main.innerHTML += ctaButtons()
-    // main.innerHTML = currentDog.mains()
+    pawIcon.addEventListener("click", setProfileHtml)
+    chatIcon.addEventListener("click", chatIconDisplay)
+    profileIcon.addEventListener("click", getNewUserAccountHtml)
+}
+getHeadersIconsDisplays()
 
-    cross = document.getElementById("cross-btn")
-    heart = document.getElementById("heart-btn")
+function ctaListinersAttachement() {
+    const cross = document.getElementById("cross-btn")
+    const heart = document.getElementById("heart-btn")
 
     cross.addEventListener("click", renderCrossBadge)
     heart.addEventListener("click", renderHeartBadge) 
+
+    getHeadersIconsDisplays()   
 }
 
+function setProfileHtml() {
+    render()
+    getHeadersIconsDisplays()
+    ctaListinersAttachement()
+    getStartedListinerAttachement()
+}
+
+function chatIconDisplay() {
+    getIntroPageHtml()
+    getHeadersIconsDisplays()
+    getStartedListinerAttachement()
+}
+
+function getNewUserAccountHtml() {
+    main.innerHTML = newUswerAccount()
+    getHeadersIconsDisplays()
+    getStartedListinerAttachement()
+}
+
+function getStartedListinerAttachement() {
+    const cta = document.getElementById("cta")
+    cta.addEventListener("click", getStarted)
+}
+getStartedListinerAttachement()
+
+function getStarted() {
+    render()
+    ctaListinersAttachement()
+}
 
 function nextProfileHtml() {
     if(!isWaiting) {
         if(currentDog.swiped || currentDog.liked) {
-            console.log(`nextProfileHtml is working and currentDogIndex = ${currentDogIndex}`)
             isWaiting = true
+
             // display the next profile
             if(currentDogIndex < dogsData.length - 1) {
                 setTimeout(()=> {
-                    console.log("setTimeout is working")
                     currentDogIndex++
-                    console.log(`currentDogIndex = ${currentDogIndex}`)
                     currentDog = new Character(dogsData[currentDogIndex])
-                    main.innerHTML = header()
                     render()
-                    main.innerHTML += ctaButtons()
-                    // main.innerHTML = currentDog.mains()
+                    ctaListinersAttachement()
                     isWaiting = false
                 }, 1000)
             } else {
-                setTimeout(()=> {
-                    console.log("endPage initialized")
-                    console.log(startPage())
-                    currentDog = endPage()
-                    main.innerHTML = currentDog
+                setTimeout(()=>{
+                    main.innerHTML = endPage()
                 }, 1000)
             }
-            
         }
     }
 }
 
 function renderCrossBadge() {
-    // main.removeAttribute("class")
-    console.log("renderCrossBadge is working")
-
     main.innerHTML += currentDog.getCrossBadgeHtml()
     currentDog.swiped = true
     nextProfileHtml()
 }
 
 function renderHeartBadge() {
-    console.log("renderHeartBadge is working")
-
     main.innerHTML += currentDog.getHeartBadgeHtml()
     currentDog.liked = true
     nextProfileHtml()
 }
 
 function render() {
+    main.innerHTML = header()
     main.innerHTML += currentDog.getDogHtml()
+    main.innerHTML += ctaButtons()
 }
-
-// render()
-
-export default render
