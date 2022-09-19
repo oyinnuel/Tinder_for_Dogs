@@ -60,7 +60,7 @@ function endPage() {
         
         <div class="styled-page">
             <p>Congratulations!</p>
-            <img class="end-image" src="images/end_image.PNG">
+            <img class="end-image" src="images/end_image.png">
             <p>You have reached the end of this catalog.</p> 
             <p>Thank you for your participation</p>
         </div>
