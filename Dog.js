@@ -1,24 +1,26 @@
-function Character(dogsData) {
-    Object.assign(this, dogsData)
+class Character {
+    constructor(dogsData) {
+        Object.assign(this, dogsData)
 
-    this.swiped = this.hasBeenSwiped
-    this.liked = this.hasBeenLiked
+        this.swiped = this.hasBeenSwiped
+        this.liked = this.hasBeenLiked
+    }
 
-    this.getCrossBadgeHtml = function() {
+    getCrossBadgeHtml() {
         return `
             <div>
                 <img class="badge" src="images/badge-nope.png">
             </div>`
     }
 
-    this.getHeartBadgeHtml = function() {
+    getHeartBadgeHtml() {
         return `
             <div>
                 <img class="badge" src="images/badge-like.png">
             </div>`
     }
 
-    this.getDogHtml = function() {
+    getDogHtml() {
         const { name, avatar, age, bio } = this
         return `
             <div>
